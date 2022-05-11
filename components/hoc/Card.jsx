@@ -3,7 +3,7 @@ import React from 'react'
 
 const Card = ({ children, header }) => {
     return (
-        <View style={styles.header}>
+        <View style={styles.container}>
             <Text style={styles.header}>{header}</Text>
             {children}
         </View>
@@ -22,7 +22,9 @@ const styles = StyleSheet.create({
         maxWidth: 600,
         width: '90%',
         borderTopRightRadius: 10,
-        borderTopLeftRadius: 10
+        borderTopLeftRadius: 10,
+        paddingBottom:10,
+        marginVertical: 10
     },
     header: {
         backgroundColor: 'royalblue',
