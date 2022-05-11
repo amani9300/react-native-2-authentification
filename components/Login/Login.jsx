@@ -16,6 +16,8 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
 
     const onChangeEmailHandler = (text) => {
         setEmail(text);
@@ -27,10 +29,13 @@ const Login = () => {
 
     const onSubmitHandler = () => {
 
-        if (password.trim() !== '' && password.length > 5 && validateEmail(email)) {
+        if (password.trim().length > 5  && validateEmail(email)) {
 
             console.log(email);
             console.log(password);
+        }else{
+            setEmailError(validateEmail(email) ? '' : 'invalid email');
+            setPasswordError(password.trim().length > 5  ? '' : 'invalid password')
         }
     }
 
