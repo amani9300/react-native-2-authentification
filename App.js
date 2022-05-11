@@ -11,6 +11,11 @@ export default function App() {
       <Input>
         <Entypo name='email' size={24} color='royalblue' />
       </Input>
+
+      <Input>
+        <Entypo name='lock' size={24} color='royalblue' />
+      </Input>
+      
       
     </View>
   );
