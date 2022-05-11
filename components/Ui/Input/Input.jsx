@@ -13,5 +13,5 @@ const Input = ({ children }) => {
     )
 }
 
-export default Input
+export default Input;
 
