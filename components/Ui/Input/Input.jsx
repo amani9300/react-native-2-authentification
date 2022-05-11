@@ -1,15 +1,16 @@
 import { StyleSheet, Text, View, TextInput } from 'react-native'
 import React from 'react'
-
-const Input = () => {
-  return (
-    <View>
-        {/* l'icone */}
-      <View></View>
-      {/* l'input */}
-      <TextInput />
-    </View>
-  )
+import styles from './inputStyles';
+// props => {children: ....., }
+const Input = ({ children }) => {
+    return (
+        <View style={styles.container}>
+            {/* l'icone */}
+            <View>{children}</View>
+            {/* l'input */}
+            <TextInput style={styles.input} />
+        </View>
+    )
 }
 
 export default Input
