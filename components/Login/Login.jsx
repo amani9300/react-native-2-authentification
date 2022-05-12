@@ -33,9 +33,11 @@ const Login = () => {
 
             console.log(email);
             console.log(password);
+            setEmailError('');
+            setPasswordError('');
         }else{
             setEmailError(validateEmail(email) ? '' : 'invalid email');
-            setPasswordError(password.trim().length > 5  ? '' : 'invalid password')
+            setPasswordError(password.trim().length > 5  ? '' : 'invalid password');
         }
     }
 
@@ -43,11 +45,11 @@ const Login = () => {
     console.log('password:  ', password);
     return (
         <Card header='Please, Login here!'>
-            <Input val={email} handlerFunction={onChangeEmailHandler}>
+            <Input val={email} handlerFunction={onChangeEmailHandler} errorMsg={emailError} >
                 <Entypo name='email' size={24} color='royalblue' />
             </Input>
 
-            <Input val={password} handlerFunction={onChangePasswordHandler}>
+            <Input val={password} handlerFunction={onChangePasswordHandler} errorMsg={passwordError}>
                 <Entypo name='lock' size={24} color='royalblue' />
             </Input>
 

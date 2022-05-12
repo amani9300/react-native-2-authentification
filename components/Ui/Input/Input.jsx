@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TextInput } from 'react-native'
 import React from 'react'
 import styles from './inputStyles';
 // props => {children: ....., }
-const Input = ({ handlerFunction, val, children }) => {
+const Input = ({ handlerFunction, val, children, errorMsg }) => {
     return (
         <>
             <View style={styles.container}>
@@ -11,7 +11,9 @@ const Input = ({ handlerFunction, val, children }) => {
                 {/* l'input */}
                 <TextInput onChangeText={handlerFunction} value={val} style={styles.input} />
             </View>
-            <Text></Text>
+            {/* {condition && qlq chose à retourné} */}
+            {errorMsg && <Text>{errorMsg}</Text>} 
+            {/* {errorMsg ? <Text>{errorMsg}</Text> : null} */}
         </>
     )
 }
