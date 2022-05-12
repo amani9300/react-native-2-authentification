@@ -15,6 +15,10 @@ export default function App() {
     setIsAuth(true);
   }
 
+  const logoutHandler = () => {
+    setIsAuth(false);
+  }
+
   // 2eme solution
   // let content;
   // if (isAuth) {
@@ -33,7 +37,7 @@ export default function App() {
       {/* {content} */}
 
       {/* 1ere solution */}
-      {isAuth ? <Home /> :
+      {isAuth ? <Home logoutHandler={logoutHandler}/> :
 
         (<> <Header />
 
