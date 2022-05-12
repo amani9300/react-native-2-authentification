@@ -33,13 +33,13 @@ export default function App() {
   // }
 
   return (
-    <UserContext.Provider value={{authentification: isAuth, login:loginHandler} }>
+    <UserContext.Provider value={{authentification: isAuth, login:loginHandler, logout:logoutHandler} }>
       <View style={styles.container}>
         {/* 2eme solution */}
         {/* {content} */}
 
         {/* 1ere solution */}
-        {isAuth ? <Home logoutHandler={logoutHandler} /> :
+        {isAuth ? <Home  /> :
 
           (<> <Header />
 

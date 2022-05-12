@@ -1,12 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React , {useContext} from 'react'
 import Button from '../Ui/Button/Button'
+import { UserContext } from '../../context/userContext'
 
 const Home = ({logoutHandler}) => {
+  const userContext = useContext(UserContext)
   return (
     <View style={styles.container}>
       <Text style={{color:'white'}}>Home</Text>
-      <Button press={logoutHandler} styleBtn={{backgroundColor:'crimson'}}>Logout</Button>
+      <Button press={userContext.logout} styleBtn={{backgroundColor:'crimson'}}>Logout</Button>
     </View>
   )
 }
