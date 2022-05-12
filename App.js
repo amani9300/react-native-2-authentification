@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
+import { UserContext } from './context/userContext';
 
 
 
@@ -32,24 +33,22 @@ export default function App() {
   // }
 
   return (
-    <View style={styles.container}>
-      {/* 2eme solution */}
-      {/* {content} */}
+    <UserContext.Provider value={{authentification: isAuth, login:loginHandler} }>
+      <View style={styles.container}>
+        {/* 2eme solution */}
+        {/* {content} */}
 
-      {/* 1ere solution */}
-      {isAuth ? <Home logoutHandler={logoutHandler}/> :
+        {/* 1ere solution */}
+        {isAuth ? <Home logoutHandler={logoutHandler} /> :
 
-        (<> <Header />
+          (<> <Header />
 
-          <Login loginHandler={loginHandler} />
-        </>)
-      }
+            <Login />
+          </>)
+        }
 
-
-
-
-
-    </View>
+      </View>
+    </UserContext.Provider>
   );
 }
 

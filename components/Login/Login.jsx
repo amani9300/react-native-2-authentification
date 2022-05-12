@@ -4,7 +4,10 @@ import Input from './../Ui/Input/Input';
 import Card from './../hoc/Card';
 import Button from './../Ui/Button/Button';
 import { Entypo } from '@expo/vector-icons';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { UserContext } from '../../context/userContext';
+
+
 const validateEmail = (email) => {
     return String(email)
         .toLowerCase()
@@ -13,6 +16,10 @@ const validateEmail = (email) => {
         );
 };
 const Login = ({loginHandler}) => {
+
+    // définir le consumer
+    
+    const userContext = useContext(UserContext)
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -35,7 +42,7 @@ const Login = ({loginHandler}) => {
             console.log(password);
 
           
-            loginHandler();
+            userContext.login();
         }else{
             setEmailError(validateEmail(email) ? '' : 'invalid email');
             setPasswordError(password.trim().length > 5  ? '' : 'invalid password');
