@@ -45,11 +45,12 @@ const Login = () => {
     console.log('password:  ', password);
     return (
         <Card header='Please, Login here!'>
-            <Input val={email} handlerFunction={onChangeEmailHandler} errorMsg={emailError} >
+            <Input val={email} handlerFunction={onChangeEmailHandler} errorMsg={emailError} placeHolder='Email'>
                 <Entypo name='email' size={24} color='royalblue' />
+               
             </Input>
 
-            <Input val={password} handlerFunction={onChangePasswordHandler} errorMsg={passwordError}>
+            <Input val={password} handlerFunction={onChangePasswordHandler} errorMsg={passwordError} placeHolder='Password' isPassword>
                 <Entypo name='lock' size={24} color='royalblue' />
             </Input>
 
