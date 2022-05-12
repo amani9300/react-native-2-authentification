@@ -22,7 +22,7 @@ const Input = ({ handlerFunction, val, children, errorMsg, placeHolder, isPasswo
                 {/* l'icone */}
                 <View>{children}</View>
                 {/* l'input */}
-                <TextInput secureTextEntry={!isPasswordShown} onChangeText={handlerFunction} value={val} style={styles.input} placeholder={placeHolder} />
+                <TextInput secureTextEntry={isPassword ? isPasswordShown ? false : true : null} onChangeText={handlerFunction} value={val} style={styles.input} placeholder={placeHolder} />
                 {/* 1ere solution */}
                 {/* {passwordIcone} */}
 
